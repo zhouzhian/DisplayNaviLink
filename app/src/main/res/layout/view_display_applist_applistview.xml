@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.anyonavy.displaynavi.widget.dynamicgrid.DynamicGridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:horizontalSpacing="22dp"
+        android:verticalSpacing="22dp"
+        android:columnWidth="260dp"
+        android:numColumns="3"
+        android:id="@+id/grid_applist"
+        />
+</merge>

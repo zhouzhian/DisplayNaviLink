@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_bottombar"
+    android:gravity="center_vertical"
+    >
+
+    <ImageView
+        android:id="@+id/iv_bottombar_ring"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/icon_bottom_ring"
+        android:layout_marginRight="10dp"
+        />
+    <TextView
+        android:id="@+id/tv_bottombar_weather"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="6-10° 阵雨"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/tv_bottombar_date"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="2018年3月2日 星期五"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        />
+
+
+    <ImageView
+        android:id="@+id/iv_bottombar_set"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/icon_bottom_setting"
+        android:layout_marginLeft="10dp"
+        />
+
+</LinearLayout>
