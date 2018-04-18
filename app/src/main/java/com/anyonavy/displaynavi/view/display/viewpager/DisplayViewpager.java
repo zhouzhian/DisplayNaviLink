@@ -78,7 +78,7 @@ public class DisplayViewpager extends ViewPager{
         if (mViewPagerAdapter == null){//如果adapter为null要new adapter，new之前给adapter的数据准备好
             //mViewList初始化的时候添加了主界面，这在根据应用数量添加拖动页面
             for (int i = 0; i < size - 1; i++){
-                mViewList.add(new AppListView(mContext));
+                mViewList.add(new AppListView(mContext).applistViewStart(i));
             }
             mViewPagerAdapter = new ViewPagerAdapter();
             setAdapter(mViewPagerAdapter);//this.setAdapter(mViewPagerAdapter)
@@ -113,6 +113,12 @@ public class DisplayViewpager extends ViewPager{
         public Object instantiateItem(ViewGroup container, int position) {
             container.addView(mViewList.get(position));
             return mViewList.get(position);
+        }
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+//            super.destroyItem(container, position, object);
+            container.removeView(mViewList.get(position ));
         }
     }
 

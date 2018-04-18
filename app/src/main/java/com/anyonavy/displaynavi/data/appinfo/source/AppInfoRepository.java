@@ -12,9 +12,7 @@ import java.util.List;
 
 import static com.anyonavy.displaynavi.utils.ContsUtils.*;
 
-/**
- * Created by ZuiC on 2017/1/18.
- */
+
 
 public class AppInfoRepository implements AppInfoDataSource{
 

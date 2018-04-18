@@ -18,11 +18,13 @@ public class AppListPresenter implements AppListContract.Presenter {
     private static final String TAG = "AppListPresenter";
     private final AppListView mAppListView;
     private final AppInfoRepository mAppInfoRepository;
+    private final int applistPagernum;
     private List<AppInfo> mAppListInfo;
 
-    public AppListPresenter(AppListView appListView, AppInfoRepository appInfoRepository){
+    public AppListPresenter(AppListView appListView, AppInfoRepository appInfoRepository, int num){
         this.mAppListView = appListView;
         this.mAppInfoRepository = appInfoRepository;
+        this.applistPagernum=num;
         mAppListView.setPresenter(this);
     }
 
@@ -39,6 +41,6 @@ public class AppListPresenter implements AppListContract.Presenter {
                 mAppListInfo = installedAppInfo;
             }
         });
-        mAppListView.initAppListContent(mAppListInfo);
+        mAppListView.initAppListContent(mAppListInfo,applistPagernum);
     }
 }

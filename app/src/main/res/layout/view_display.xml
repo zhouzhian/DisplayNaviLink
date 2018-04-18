@@ -9,9 +9,7 @@
         android:id="@+id/vp_display_viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        >
-    </com.anyonavy.displaynavi.view.display.viewpager.DisplayViewpager>
+        android:layout_weight="1"/>
 
     <!--dot-->
     <LinearLayout

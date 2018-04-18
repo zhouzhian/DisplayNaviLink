@@ -5,9 +5,6 @@ import com.anyonavy.displaynavi.data.appinfo.AppInfo;
 
 import java.util.List;
 
-/**
- * Created by ZuiC on 2017/1/18.
- */
 
 public interface AppInfoDataSource {
 

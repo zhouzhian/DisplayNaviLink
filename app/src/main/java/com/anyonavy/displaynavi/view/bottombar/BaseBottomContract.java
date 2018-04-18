@@ -15,6 +15,8 @@ public interface BaseBottomContract {
 
     interface View extends BaseContract.BaseView<Presenter>{
         void setCurDate(String date);
+
+        void setCurWeather(String weatherInfos);
     }
 
 }

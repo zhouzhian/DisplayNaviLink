@@ -15,7 +15,7 @@ import java.util.List;
 public interface AppListContract{
 
     interface view extends BaseContract.BaseView<Presenter> {
-        void initAppListContent(List<AppInfo> appInfoList);
+        void initAppListContent(List<AppInfo> appInfoList,int num);
     }
 
     interface Presenter extends BaseContract.BasePresenter{

@@ -68,4 +68,9 @@ public class BottomBarView extends LinearLayout implements BaseBottomContract.Vi
     public void setCurDate(String date) {
         tvBottombarDate.setText(date);
     }
+
+    @Override
+    public void setCurWeather(String weatherInfos) {
+        tvBottombarWeather.setText(weatherInfos);
+    }
 }

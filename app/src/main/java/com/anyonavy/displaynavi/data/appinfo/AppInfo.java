@@ -2,9 +2,6 @@ package com.anyonavy.displaynavi.data.appinfo;
 
 import android.graphics.drawable.Drawable;
 
-/**
- * Created by ZuiC on 2017/1/18.
- */
 
 public class AppInfo {
 

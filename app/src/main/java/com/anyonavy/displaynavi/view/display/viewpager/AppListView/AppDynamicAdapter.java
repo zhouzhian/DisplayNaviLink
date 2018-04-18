@@ -32,15 +32,21 @@ public class AppDynamicAdapter extends BaseDynamicGridAdapter {
     private Map<String, AppInfo> appPositionInfo = new LinkedHashMap<>();
 
 
-    public AppDynamicAdapter(Context context, List<AppInfo> appInfoList, int columnCount) {
+    public AppDynamicAdapter(Context context, List<AppInfo> appInfoList, int columnCount,
+                             int applistPagernum) {
         super(context, new ArrayList<Object>(Arrays.asList(sPosition)), columnCount);
-        for (int i = 0; i < appInfoList.size(); i++){
-            appPositionInfo.put(sPosition[i], appInfoList.get(i));
+        int startNum = applistPagernum*6;
+        int endNum = startNum+6;
+        for (int i = startNum; i < endNum; i++){
+            if (endNum > appInfoList.size()){
+                appPositionInfo.put(sPosition[i-startNum], new AppInfo("NULL", "NULL", "NULL", "NULL" , -1 , -1 ,false));
+            }else {
+                appPositionInfo.put(sPosition[i-startNum], appInfoList.get(i));
+            }
         }
-
-        for (int i = 0; i < 6 - appInfoList.size(); i++){
-            appPositionInfo.put(sPosition[i + appInfoList.size()], new AppInfo("NULL", "NULL", "NULL", "NULL" , -1 , -1 ,false));
-        }
+//        for (int i = 0; i < 6 - appInfoList.size(); i++){
+//            appPositionInfo.put(sPosition[i + appInfoList.size()], new AppInfo("NULL", "NULL", "NULL", "NULL" , -1 , -1 ,false));
+//        }
     }
 
     @Override

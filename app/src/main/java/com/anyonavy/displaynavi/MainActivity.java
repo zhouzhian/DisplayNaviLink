@@ -58,6 +58,7 @@ public class MainActivity extends Activity {
         boolean reloadAppInfo = ((MyApplication)getApplication()).isBackendReturn();
         dvDisplayApp.onResume(reloadAppInfo);
         tvTopbarView.startUpdateTime();
+        tvTopbarView.updateBluAndWifiStatus();
         bvBottombarView.startUpdateDate();
     }
 
@@ -66,6 +67,12 @@ public class MainActivity extends Activity {
         super.onStop();
         tvTopbarView.stopUpdateTime();
         bvBottombarView.stopUpdateDate();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        tvTopbarView.RemoveBroadcastRec();
     }
 
     @Override

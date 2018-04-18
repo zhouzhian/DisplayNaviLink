@@ -14,9 +14,6 @@ import com.anyonavy.displaynavi.utils.AppManagerUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by ZuiC on 2017/1/18.
- */
 
 public class AppInfoLocalDataSource {
 

@@ -29,29 +29,29 @@ public class AppListView extends LinearLayout implements AppListContract.view {
     public AppListView(Context context) {
         super(context);
         initView(context);
-        setListener();
     }
 
     public AppListView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initView(context);
-        setListener();
     }
 
     public AppListView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initView(context);
-        setListener();
     }
-
 
     public void initView(Context context){
         this.mContext = context;
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
         View view = layoutInflater.inflate(R.layout.view_display_applist_applistview, this);
-
         gridAppList = (DynamicGridView) view.findViewById(R.id.grid_applist);
-        new AppListPresenter(this, AppInfoRepository.getInstance()).start();
+    }
+
+    public AppListView applistViewStart(int num){
+        new AppListPresenter(this, AppInfoRepository.getInstance(),num).start();
+        setListener();
+        return this;
     }
 
 
@@ -68,8 +68,8 @@ public class AppListView extends LinearLayout implements AppListContract.view {
     }
 
     @Override
-    public void initAppListContent(List<AppInfo> appInfoList) {
-        gridAppList.setAdapter(new AppDynamicAdapter(mContext, appInfoList, 3));
+    public void initAppListContent(List<AppInfo> appInfoList,int applistPagernum) {
+        gridAppList.setAdapter(new AppDynamicAdapter(mContext, appInfoList, 3,applistPagernum));
     }
 
     @Override

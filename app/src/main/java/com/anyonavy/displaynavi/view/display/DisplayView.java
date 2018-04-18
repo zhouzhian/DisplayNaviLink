@@ -21,11 +21,11 @@ public class DisplayView extends LinearLayout implements BaseDisplayContract.Bas
 
     private Context mContext;
     private LinearLayout lltViewpagerDot;
-    private DisplayViewpager vpDisplayViewpager;
     private OnOpenIconListener dvOpenIconListener;
     private int mCurSelectedPage,mPageSize;
     private ImageView mCurSelectedDot,mPreSelectedDot;
     private BaseDisplayContract.BaseDisplayPresenter mPresenter;
+    private DisplayViewpager vpDisplayViewpager;
 
     public DisplayView(Context context) {
         super(context);
@@ -97,7 +97,7 @@ public class DisplayView extends LinearLayout implements BaseDisplayContract.Bas
         View view = layoutInflater.inflate(R.layout.view_display, this);
 
         lltViewpagerDot = (LinearLayout) view.findViewById(R.id.llt_viewpager_dot);
-        vpDisplayViewpager = (DisplayViewpager) findViewById(R.id.vp_display_viewpager);
+        vpDisplayViewpager = (DisplayViewpager) view.findViewById(R.id.vp_display_viewpager);
 
         new DisplayerPresenter(DisplayView.this, AppInfoRepository.getInstance()).start();
 
